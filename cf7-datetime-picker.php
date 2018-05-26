@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Contact Form7 Date and time picker 
+Plugin Name: Contact form 7 - DateTime picker
 Plugin URL: https://rwsite.ru
-Description: Contact Form7 Date and time picker
+Description: Date and time picker plugin for Contact form 7
 Author: Alex Tikhomirov
 Author URI: http://rwsite.ru
 Text Domain: rw-addon
@@ -10,9 +10,13 @@ Domain Path: /languages/
 Version: 1.0
 */
 
+
+
+
 if( !defined('RW_PLUGIN_NAME') ) {
     define( 'RW_PLUGIN_NAME', 'rw-addon' );
 }
+
 
 /**
  * Errors
@@ -25,17 +29,17 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * Checking rw-addon
  */
-/**
- * Checking rw-addon
- */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php');
 if ( is_plugin_active( 'rw-addon/rw-addon.php') ) {
     $error = __( "You already have a other version in our massive add-on.", RW_PLUGIN_NAME );
     exit($error);
 }
 elseif( !is_plugin_active( 'contact-form-7/wp-contact-form-7.php') ) {
-    $error = __( "Plugin Contact form 7 not installed!", RW_PLUGIN_NAME );
-    exit($error);
+    add_action( 'admin_notices', 'fx_admin_notice_example_notice' );
+    function fx_admin_notice_example_notice(){
+       $error = __( 'Plugin <strong>Contact form 7</strong> not activated! Please activate this for using plugin "Contact form 7 - DateTime picker".', RW_PLUGIN_NAME );
+       echo'<div class="notice notice-warning is-dismissible"><p>'. $error  .'</p></div>';
+     }
 }
 
 /*
