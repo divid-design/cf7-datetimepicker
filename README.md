@@ -7,9 +7,9 @@ cf7-datetimepicker
 
 jQuery settings are saved in function "add_datetimepicker()"
 
-Plugin have settings by default:
+**Plugin have settings by default:**
 
- $.datetimepicker.setLocale('ru');
+$.datetimepicker.setLocale('ru');
         $('#datetimepicker').datetimepicker({
          timepicker:true,
          format:'d.m.Y H:i',
