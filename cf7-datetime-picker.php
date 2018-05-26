@@ -25,12 +25,15 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * Checking rw-addon
  */
+/**
+ * Checking rw-addon
+ */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php');
 if ( is_plugin_active( 'rw-addon/rw-addon.php') ) {
     $error = __( "You already have a other version in our massive add-on.", RW_PLUGIN_NAME );
     exit($error);
 }
-elseif( false == is_plugin_active( 'contact-form-7/wp-contact-form-7') ) {
+elseif( !is_plugin_active( 'contact-form-7/wp-contact-form-7.php') ) {
     $error = __( "Plugin Contact form 7 not installed!", RW_PLUGIN_NAME );
     exit($error);
 }
