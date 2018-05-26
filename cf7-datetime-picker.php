@@ -15,15 +15,11 @@ if( !defined('RW_PLUGIN_NAME') ) {
 }
 
 /**
- * Error
+ * Errors
  */
-if ( ! defined( 'ABSPATH' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
     $error = __('ABSPATH is not defined', RW_PLUGIN_NAME);
     exit ($error); // Exit if accessed directly
-}
-if (!defined('WPCF7_PLUGIN')) {
-    $error = __( "Plugin Contact form 7 not installed!", RW_PLUGIN_NAME );
-    exit($error);
 }
 
 /**
@@ -32,6 +28,10 @@ if (!defined('WPCF7_PLUGIN')) {
 include_once( ABSPATH . 'wp-admin/includes/plugin.php');
 if ( is_plugin_active( 'rw-addon/rw-addon.php') ) {
     $error = __( "You already have a other version in our massive add-on.", RW_PLUGIN_NAME );
+    exit($error);
+}
+elseif( is_plugin_active( 'contact-form-7/wp-contact-form-7') ) {
+    $error = __( "Plugin Contact form 7 not installed!", RW_PLUGIN_NAME );
     exit($error);
 }
 
