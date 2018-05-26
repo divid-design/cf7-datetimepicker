@@ -1,5 +1,5 @@
 # WordPress Plugin Contact Form 7 Date and Time picker 
-cf7-datetimepicker
+"Contact form 7 - DateTime picker"
 
 Плагин выбора времени и даты для Contact Form 7.
 
